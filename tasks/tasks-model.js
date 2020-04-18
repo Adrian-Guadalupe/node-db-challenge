@@ -1,10 +1,9 @@
 const db = require('../data/db-config.js')
 
-const find = (id) => {
+const find = () => {
    return db('tasks')
-      .join('projects', 'tasks.project_id', 'projects.id' )
-      .select('project.name', 'project.description', 'tasks.id', 'tasks.description')
-      .where({ 'tasks.id': id })
+      // .select('project.name', 'project.description', 'tasks.id', 'tasks.description')
+      // .join('projects', 'tasks.project_id', 'projects.id' )
 }
 
 const add = (task) => {

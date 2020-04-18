@@ -4,10 +4,8 @@ const Tasks = require('./tasks-model.js')
 
 const router = express.Router()
 
-router.get('/:id', (req, res) => {
-   const { id } = req.params 
-
-   Tasks.find(id)
+router.get('/', (req, res) => {
+   Tasks.find()
       .then(tasks => {
          res.status(200).json(tasks)
       })
